@@ -1,7 +1,7 @@
 # Docker-nginx-lb
 
 Nginx-lb is an extremely simple nginx-based load-balancer packaged in a Docker 
-container. It accepts requests at specified port distributes the requests over 
+container. It accepts requests at specified port and distributes them over 
 one or more backend servers.
 
 In effect this project is a lightweight wrapper (~23 MB) over the 
@@ -36,7 +36,7 @@ the following configuration options:
 | Environment Variable | Description                                                   | Default      | Examples      |
 |----------------------|---------------------------------------------------------------|--------------|---------------|
 | `LB_PORT`            | The port the LB should accept requests on.                    | `80`         | `443`, `9090` |
-| `LB_BACKENDS`        | The server(s) to which the LB should distribute the requests, comma-separated. | `example.com:80` | `server1.example.com:3030,server2.example.com:3031` |
+| `LB_BACKENDS`        | The server(s) to which the LB should distribute the requests, semicolon-separated. | `example.com:80` | `server1.example.com:3030;10.0.12.34:3031` |
 
 ## Building
 

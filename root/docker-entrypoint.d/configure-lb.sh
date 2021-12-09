@@ -16,8 +16,8 @@ main() {
 
 complete_nginx_conf() {
   UPSTREAM_BACKENDS=""
-  for i in $(echo $LB_BACKENDS | sed 's|,| |g') ; do
-    UPSTREAM_BACKENDS="$UPSTREAM_BACKENDS   server $i;\n"
+  for i in $(echo $LB_BACKENDS | sed 's|;| |g') ; do
+    UPSTREAM_BACKENDS="$UPSTREAM_BACKENDS   server $$i;\n"
   done
 
   sed -i "s|__LB_PORT__|${LB_PORT}|" "${NGINX_CONF}"
